@@ -1,4 +1,4 @@
-FROM nginx:1.22 AS finally
+FROM nginx:1.27
 
 # Install apache2-utils to get htpasswd command
 RUN apt-get update -y && apt-get install -y apache2-utils && rm -rf /var/lib/apt/lists/*
@@ -11,6 +11,7 @@ ENV BASIC_PASSWORD=password
 # google.com is used as a placeholder, to be replaced using environment variables
 ENV FORWARD_HOST=google.com
 ENV FORWARD_PORT=80
+ENV FORWARD_PROTOCOL=http
 ENV BIND_PORT=80
 
 # Nginx config file
