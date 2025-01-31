@@ -5,7 +5,7 @@ services:
       - mynetwork
 
   nginx:
-    image: akkuman/nginx-basic-auth
+    image: vikmstr/nginx-basic-auth
     ports:
       - "80:3000"
     depends_on:
